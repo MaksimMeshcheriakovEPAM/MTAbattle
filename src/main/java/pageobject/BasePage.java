@@ -1,9 +1,13 @@
 package pageobject;
 
 import io.appium.java_client.AppiumDriver;
+import org.openqa.selenium.support.PageFactory;
 
-public class BasePage {
-    AppiumDriver driver;
+import static runner.Driver.getDriver;
 
+public abstract class BasePage {
 
+    public BasePage() {
+        PageFactory.initElements(getDriver(), this);
+    }
 }

@@ -1,6 +1,17 @@
 package runner;
 
+
+import org.testng.annotations.BeforeClass;
+
 public class SetUpSuite {
-    // Setup driver
+
+    @BeforeClass()
+   public void setUpSession(){
+
+   }
+
+   public void tearDownSession(){
+
+   }
 
 }
