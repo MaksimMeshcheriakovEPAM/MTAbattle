@@ -1,16 +1,22 @@
 package runner;
 
-
 import org.testng.annotations.*;
 
-public class SetUpSuite {
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Method;
 
-    @BeforeClass(groups = {"Android, iOS"}, alwaysRun = true)
-   public void setUpSession(ITestAnnotation annotation){
-        System.out.println("Group Name is --" + annotation.getGroups()) ;
+public abstract class SetUpSuite {
+
+    @BeforeMethod(alwaysRun = true)
+   public void setUpSession(Method m){
+        Test t = m.getAnnotation(Test.class);
+        for (int i = 0; i < t.groups().length; i++) {
+            System.out.println(t.groups()[i]);
+        }
 
    }
 
+   @AfterClass(alwaysRun = true)
    public void tearDownSession(){
         System.out.println("Test done");
 
