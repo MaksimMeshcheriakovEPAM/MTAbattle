@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.epam</groupId>
+    <groupId>com.epam.qa</groupId>
     <artifactId>mobileTestAutomationBattle</artifactId>
     <version>LATEST</version>
 
@@ -22,7 +22,7 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>6.9.7</version>
+            <version>6.9.10</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -30,8 +30,21 @@
             <version>1.18.8</version>
             <scope>provided</scope>
         </dependency>
-
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+                <version>3.7.0</version>
+            </plugin>
+        </plugins>
+    </build>
 
 
 </project>
