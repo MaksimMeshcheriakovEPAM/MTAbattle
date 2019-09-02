@@ -1,24 +1,21 @@
 package runner;
 
-import org.testng.annotations.*;
-
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Method;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 
 public abstract class SetUpSuite {
 
     @BeforeMethod(alwaysRun = true)
-   public void setUpSession(Method m){
-        Test t = m.getAnnotation(Test.class);
-        for (int i = 0; i < t.groups().length; i++) {
-            System.out.println(t.groups()[i]);
-        }
+    @Parameters({"platform"})
+   public void setUpSession(String p){
+        System.out.println("Test preparation for "+p);
 
    }
 
    @AfterClass(alwaysRun = true)
    public void tearDownSession(){
-        System.out.println("Test done");
+        System.out.println("Test done\n");
 
    }
 

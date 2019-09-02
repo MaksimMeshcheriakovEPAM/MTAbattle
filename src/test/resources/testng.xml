@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<!--suite name="MTAB - universal Appium native example" parallel="tests" verbose="1" configfailurepolicy="continue"-->
-<suite name="MTAB - universal Appium native example" verbose="1" configfailurepolicy="continue">
+<suite name="MTAB - universal Appium native example" parallel="tests" verbose="1" configfailurepolicy="continue">
 
-    <groups>
-        <run>
-            <include name="Android"/>
-            <include name="iOS"/>
-        </run>
-    </groups>
-
-    <test name="Android">
+    <test name="Android" >
+        <parameter name="platform" value="Android"></parameter>
         <classes>
             <class name="scenarios.CalcTest"></class>
         </classes>
@@ -18,6 +11,7 @@
     </test>
 
     <test name="iOS">
+        <parameter name="platform" value="iOS"></parameter>
         <classes>
             <class name="scenarios.CalcTest"></class>
         </classes>
