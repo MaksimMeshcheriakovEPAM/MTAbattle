@@ -14,8 +14,17 @@ public class Driver {
         return driver.get();
     }
 
-    public static void setDriver(URL drvUrl, DesiredCapabilities drvCaps) {
-        driver.set(new AppiumDriver(drvUrl, drvCaps));
+    public static void setDriver(String platform) throws Exception {
+        switch (platform){
+            case "Android":
+                driver.set(AppiumDrivers.ANDROID.getDriver());
+                break;
+            case "iOS":
+                driver.set(AppiumDrivers.IOS.getDriver());
+                break;
+            default: throw new Exception("Unknown platform "+platform);
+        }
+
     }
 
 
