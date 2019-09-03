@@ -1,10 +1,11 @@
 package pageobject;
 
+import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.Test;
 
 public class Calc extends BasePage{
 
+    @AndroidFindBy()
     private WebElement indicator;
 
     private Keyboard kbd;
