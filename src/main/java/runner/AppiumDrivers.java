@@ -29,7 +29,7 @@ public enum AppiumDrivers {
             default:
                 dc.setCapability(MobileCapabilityType.APPLICATION_NAME,"Calc");
                 try {
-                    ad = new AndroidDriver(new URL("http://EPM-TSTF:06e8af46-605e-4694-bb6a-d3563fb08995@mobilecloud.epam.com:8080/wd/hub"), dc);
+                    ad = new AndroidDriver(new URL("http://EPM-TSTF:deddde0a-3e18-4d0d-b504-d132a1089df5@mobilecloud.epam.com:8080/wd/hub"), dc);
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                     ad = null;

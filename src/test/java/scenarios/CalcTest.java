@@ -10,7 +10,7 @@ public class CalcTest extends SetUpSuite {
     @Parameters({"platform"})
     public void firstTest(String p){
 
-        System.out.println("Test itself for "+p);
+        System.out.println("Calc test for "+p);
     }
 
 }
